@@ -36,9 +36,65 @@ To integrate and program temperature and accelerometer sensors in an embedded sy
  
 ## MATLAB CODE 
 
-## OUTPUT
+```
+clear; clc; close all;
 
- 
+%% Simulation Parameters
+
+time Linspace(0, 10, 100); % Simulate for 10 seconds with 100 samples battery temp 25+ 5*sin(0.5*time); % Simulated temperature variation
+
+(25°C avg)
+
+accx 0.5*sin(2*time); Simulated acceleration in X-axis
+
+0.3*cos (2*time); % Simulated acceleration in Y-axis
+
+accz 9.81 + 0.1*sin(time); Simulated gravity effect on Z-axis
+
+8% Plot Temperature Sensor Data
+
+figure;
+
+subplot(2,1,1);
+
+plot(time, battery temp, 'r', 'LineWidth', 2);
+
+title('Battery Temperature Monitoring');
+
+xlabel('Time (s)');
+
+ylabel('Temperature (°C)');
+
+grid on;
+
+응용 Plot Accelerometer Data
+
+subplot(2,1,2);
+
+plot(time, accx, 'b', time, accy, 'g', time, accz, 'm', 'LineWidth', 2);
+
+title ('Vehicle Motion Tracking (Accelerometer)');
+
+xlabel('Time (s)');
+
+ylabel('Acceleration (m/s²)');
+
+legend ('X-axis', 'Y-axis', 'Z-axis');
+
+grid on;
+
+8% Display Key Data in Console
+
+fprintf('Simulated Data at Final Time (t=10s):\n'); fprintf('Battery Temperature: %.2f°C\n', battery temp (end));
+
+fprintf('Acceleration (X, Y, Z): %.2f, %.2f, %.2f m/s²\n', accX(end),
+
+acgx(end), aggz (end));
+```
+
+## OUTPUT
+![exp_1 (3)](https://github.com/user-attachments/assets/0594e5a5-af99-4aaf-9560-6c7cdc9e367b)
+
 ## RESULT
 •	The battery temperature and vehicle acceleration were successfully simulated.
 •	The system monitored and displayed sensor data in MATLAB.
